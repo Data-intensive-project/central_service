@@ -3,11 +3,14 @@ package org.example.model;
 import java.io.*;
 
 public class Message implements Serializable {
+
     long station_id;
     long s_no;
     String battery_status;
     long status_timestamp;
     Weather weather;
+
+
 
     public void setBattery_status(String battery_status) {
         this.battery_status = battery_status;
@@ -52,7 +55,7 @@ public class Message implements Serializable {
 
     @Override
     public String toString() {
-        return "{ \"station_id\": " + station_id + ",\n\"s_no\": " + s_no + ",\n" + "\"battery_status\": " + "\"" + battery_status + "\"" + ",\n\"status_timestamp\": " + status_timestamp + ",\n\"weather\": " + weather.toString() + "\n}";
+        return "{"+"\n\"station_id\": " + station_id + ",\n\"s_no\": " + s_no + ",\n" + "\"battery_status\": " + "\"" + battery_status + "\"" + ",\n\"status_timestamp\": " + status_timestamp + ",\n\"weather\": " + weather.toString() + "\n}";
     }
     public  byte[] toByteArray(){
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
